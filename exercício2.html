@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			function trocarLetra(caracter){
+				switch(caracter){
+					case "T": return "P"
+					case "E": return "O"
+					case "N": return "L"
+					case "I": return "A"
+					case "S": return "R"
+					case "P": return "T"
+					case "O": return "E"
+					case "L": return "N"
+					case "A": return "I"
+					case "R": return "S";
+					default: caracter;
+				}
+			}
+			function criptografar(){
+				var frase = document.getElementById("frase").value;
+				frase=frase.toUpperCase();
+				var fraseCriptografada = "";
+				for( var i=0; i< frase.length; i++){
+					var letra = frase.charAt(i);
+					var letraCripto = trocarLetra(letra);
+					fraseCriptografada = fraseCriptografada + letraCripto;
+				}
+				document.getElementById("msg").innerHTML = fraseCriptografada;
+			}
+		</script>
+	</head>
+	<body>
+		<form >
+			<label for="criptografar"> Escreva </label>
+			<input type="text" id="frase" placeholder="ESCREVA AQUI SEU IMUNDO" />
+			<input type="button" onclick="criptografar()" value="Verifica"/>
+		</form>
+		<h1 id="msg"></h1>
+	</body>
+</html>
